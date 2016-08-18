@@ -1,0 +1,8 @@
+{
+  "name": "energieloket",
+  "dependencies": {},
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160725073351",
+    "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts",
+  }
+}
