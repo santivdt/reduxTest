@@ -1,3 +1,4 @@
+import {INgRedux} from 'ng-redux'
 const routerConfig = (
   $stateProvider:     angular.ui.IStateProvider,
   $urlRouterProvider: angular.ui.IUrlRouterProvider
@@ -8,9 +9,6 @@ const routerConfig = (
       template:  '<home></home>',
       url:       '/',
     })
-
-  $urlRouterProvider.when('/home', '/')
-  $urlRouterProvider.otherwise('/404')
 }
 
 angular.module('energieloket').config(routerConfig)
