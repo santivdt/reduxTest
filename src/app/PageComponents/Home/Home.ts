@@ -1,8 +1,9 @@
 import {State} from '../../redux/redux'
-import {getPeople} from '../../redux/get'
+import {getPeople, getPlaces} from '../../redux/get'
 import './Home.scss'
 import {INgRedux} from 'ng-redux'
 import {PeopleActions} from '../../redux/root/people/peopleActions'
+import {PlacesActions} from '../../redux/root/places/placesActions'
 
 class HomeController {
 
@@ -20,13 +21,18 @@ class HomeController {
   private _mapState(state: State) {
     return {
       people:   getPeople(state),
+      places:   getPlaces(state),
     }
   }
 
   private addPerson(input) {
-    console.log('adding ', input, ' to the store')
     this.person = {}
     this.$ngRedux.dispatch(PeopleActions.addPerson(input))
+  }
+
+  private addPlace(input) {
+    this.place = {}
+    this.$ngRedux.dispatch(PlacesActions.addPlace(input))
   }
 
 }

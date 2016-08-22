@@ -1,5 +1,4 @@
 <h1>Santi test angular redux typescript webpack</h1>
-{{$ctrl.person}}
 <form name="peopleForm">
   <input type="text" name="name" placeholder="name" id="name" ng-model="$ctrl.person.name">
   <input type="text" name="age" placeholder="leeftijd" id="age" ng-model="$ctrl.person.age">
@@ -10,7 +9,15 @@
   </button>
 </form>
 
-<button >Add place to the state</button>
+<form name="placesForm">
+  <input type="text" name="name" placeholder="name" id="name" ng-model="$ctrl.place.name">
+  <input type="text" name="province" placeholder="province" id="province" ng-model="$ctrl.place.province">
+  <button
+    ng-click="$ctrl.addPlace($ctrl.place)"
+  >
+    Add Place to the state
+  </button>
+</form>
 
 <h1>Ctrl: </h1>
 <pre>{{$ctrl | json}}</pre>
@@ -20,4 +27,9 @@
 
 <p class="text" ng-repeat="person in $ctrl.people track by $index">
   {{person.name}} {{person.age}}
+</p>
+
+
+<p class="text" ng-repeat="place in $ctrl.places track by $index">
+  {{place.name}}, {{place.province}}
 </p>

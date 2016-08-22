@@ -1,6 +1,6 @@
 import {Action} from '../../redux'
 import {ADD_PERSON} from './peopleActions'
-import * as update from 'immutability-helper'
+import * as update from 'immutability-helper' //TODO not get
 
 export interface Person {
   name:       string
@@ -8,6 +8,8 @@ export interface Person {
 }
 
 const defaultPeople: Person[] = []
+
+//dus people als input als die undefined is dan defaultPeople, zo bouw je initiele state op
 
 export default (people: Person[] = defaultPeople, action: Action) => {
 

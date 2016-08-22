@@ -9,5 +9,4 @@ export const PeopleActions = {
     },
     type: ADD_PERSON,
   }),
-
 }

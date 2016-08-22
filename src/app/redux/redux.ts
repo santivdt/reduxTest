@@ -4,6 +4,9 @@ import {Person,
 import {INgReduxProvider} from 'ng-redux'
 import {combineReducers} from 'redux'
 import {initialState} from './constants/initialState'
+import {Place,
+        default as places,
+} from './root/places/placesReducers'
 
 
 export interface Action {
@@ -17,6 +20,7 @@ export interface Reducer<T> {
 
 export interface State {
   people:     Person[]
+  places:     Place[]
 }
 
 // let reducer: Reducer<number> = (state: number, action: Action) => state
@@ -25,7 +29,8 @@ export interface State {
 
 //todo dit zorgt dat alle reducers doorgleopen worden als er een actie wordt gefired?
 const rootReducer = combineReducers({
-  people
+  people,
+  places,
 })
 
 
