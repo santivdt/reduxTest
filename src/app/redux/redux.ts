@@ -13,7 +13,7 @@ export interface Action {
 
 export interface Reducer<T> {
   (state: T, action: Action): T
-}
+} //todo waarom heb je een soort van reducer interface?
 
 export interface State {
   people:     Person[]
@@ -23,13 +23,13 @@ export interface State {
 //
 // export type GetState = () => State
 
-
+//todo dit zorgt dat alle reducers doorgleopen worden als er een actie wordt gefired?
 const rootReducer = combineReducers({
   people
 })
 
 
-
+//todo create the store?
 const reduxConfig = (
   $ngReduxProvider: INgReduxProvider
 ) => {

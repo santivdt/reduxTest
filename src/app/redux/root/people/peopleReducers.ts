@@ -1,5 +1,6 @@
-import {Action, State} from '../../redux'
+import {Action} from '../../redux'
 import {ADD_PERSON} from './peopleActions'
+import * as update from 'immutability-helper'
 
 export interface Person {
   name:       string
@@ -12,15 +13,9 @@ export default (people: Person[] = defaultPeople, action: Action) => {
 
    if (action.type === ADD_PERSON) {
 
-     console.log('action.payload = ', action.payload)
+     return update(people, {$push: [action.payload.person]})
 
-     return {
-       people: State.people.add(action.payload)
-     }
    }
 
-   else {
-     return State
-   }
-
+   return people
 }

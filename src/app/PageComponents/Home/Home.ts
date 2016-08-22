@@ -25,6 +25,7 @@ class HomeController {
 
   private addPerson(input) {
     console.log('adding ', input, ' to the store')
+    this.person = {}
     this.$ngRedux.dispatch(PeopleActions.addPerson(input))
   }
 
